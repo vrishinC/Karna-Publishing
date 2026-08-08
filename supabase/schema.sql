@@ -60,15 +60,15 @@ create policy "Public can read site_settings"
 -- accepts any public image URL.
 insert into books (position, title, blurb, price, amazon_url, available, cover_image_url)
 values
-  (1, 'The First Chapter', 'A gripping debut novel about starting over.', 24.99, null, false, '/covers/book-1.svg'),
-  (2, 'Second Nature', 'Stories that explore what it means to belong.', 19.99, null, false, '/covers/book-2.svg'),
-  (3, 'Third Act', 'A memoir about resilience and reinvention.', 22.99, null, false, '/covers/book-3.svg')
+  (1, 'A Conversation With No Audience', 'A quiet meditation on being heard, and the silence that follows.', null, 'https://www.amazon.com/dp/B0GM5KSXCF', true, '/covers/book-1.png'),
+  (2, 'I, Kartik Aniket Navil, Do It.', 'A defiant, incendiary claim of a name and everything done in it.', null, 'https://tinyurl.com/56c2xurr', true, '/covers/book-2.png'),
+  (3, 'Third Act', 'A memoir about resilience and reinvention.', null, null, false, '/covers/book-3.svg')
 on conflict (position) do nothing;
 
 insert into site_settings (key, value)
 values
   ('tagline', 'Independent stories, thoughtfully published.'),
   ('about', E'Karna Publishing was founded to give overlooked voices a home. We work closely with every author we publish, from first draft to finished book.\n\nWe are a small press by choice: a short, carefully chosen list each year, printed and sold with care, from developmental edit to final proof.\n\nEvery title on our shelf was picked for the same reason: a voice worth hearing, told the way the author meant to tell it.'),
-  ('founded_year', '2021'),
+  ('founded_year', '2026'),
   ('instagram_handle', 'navil.kartik')
 on conflict (key) do nothing;

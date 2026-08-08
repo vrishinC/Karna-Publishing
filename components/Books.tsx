@@ -19,9 +19,6 @@ function BookCard({ book }: { book: Book }) {
 
       <h3 className="mt-6 text-lg font-semibold text-gray-900">{book.title}</h3>
       <p className="mt-2 max-w-xs text-sm text-gray-500">{book.blurb}</p>
-      {book.price != null && (
-        <p className="mt-2 text-sm text-gray-400">${Number(book.price).toFixed(2)}</p>
-      )}
 
       {canBuy ? (
         <a
@@ -30,7 +27,7 @@ function BookCard({ book }: { book: Book }) {
           rel="noopener noreferrer"
           className="mt-5 rounded-full bg-accent px-6 py-2.5 text-sm font-medium text-white transition hover:opacity-90"
         >
-          Buy on Amazon
+          Check it out!
         </a>
       ) : (
         <span

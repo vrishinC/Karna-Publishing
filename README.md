@@ -43,7 +43,7 @@ It creates two tables and seeds them with placeholder rows:
   `available`, `cover_image_url`. `position` controls the display order
   (and must be unique).
 - **`site_settings`** — a `key`/`value` table for editable copy: `tagline`,
-  `about`, `founded_year`, `instagram_handle`, `contact_email`.
+  `about`, `founded_year`, `instagram_handle`.
 
 Row Level Security is enabled on both tables with a public **read-only**
 policy. There are no insert/update/delete policies, so the anon key used by
@@ -59,15 +59,15 @@ revalidates content every 60 seconds):
 - **Add or edit a book**: edit a row in `books`. `position` (1, 2, 3, ...)
   sets shelf order; the Hero section shows the first three by `position`.
 - **Flip a book live**: set `available` to `true` and fill in `amazon_url`.
-  The "Coming Soon" pill automatically becomes a working "Buy on Amazon"
+  The "Coming Soon" pill automatically becomes a working "Check it out!"
   button — no code change required. Leaving `available = false` (or
   `amazon_url` empty) keeps the disabled state even if one of the two is set.
 - **Cover images**: paste a public image URL into `cover_image_url`. If
   it's empty, a placeholder box with the book's title is shown instead.
 - **About text**: edit the `about` row's `value` in `site_settings`.
   Separate paragraphs with a blank line — each becomes its own `<p>`.
-- **Instagram / contact**: edit `instagram_handle` (no `@`) and
-  `contact_email` in `site_settings`.
+- **Instagram**: edit `instagram_handle` (no `@`) in `site_settings`. It's
+  used for both the Instagram section and the footer link.
 - **Tagline / founded year**: edit `tagline` and `founded_year` in
   `site_settings`.
 

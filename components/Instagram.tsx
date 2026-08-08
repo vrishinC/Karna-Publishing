@@ -7,7 +7,14 @@ export function Instagram({ handle }: { handle: string }) {
       <h2 className="text-3xl font-semibold tracking-tight text-gray-900">
         Follow Along
       </h2>
-      <p className="mt-3 text-gray-500">@{cleanHandle}</p>
+      <div className="mt-3 flex items-center justify-center gap-2">
+        <img
+          src="/instagram/profile.jpg"
+          alt={`@${cleanHandle}`}
+          className="h-8 w-8 rounded-full object-cover"
+        />
+        <p className="text-gray-500">@{cleanHandle}</p>
+      </div>
       <a
         href={`https://instagram.com/${cleanHandle}`}
         target="_blank"

@@ -38,10 +38,7 @@ export default async function Page() {
         <Books books={books} />
         <Instagram handle={settings.instagram_handle ?? ""} />
       </main>
-      <Footer
-        email={settings.contact_email ?? ""}
-        instagramHandle={settings.instagram_handle ?? ""}
-      />
+      <Footer instagramHandle={settings.instagram_handle ?? ""} />
     </>
   );
 }
